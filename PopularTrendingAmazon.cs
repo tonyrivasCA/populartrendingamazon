@@ -17,27 +17,27 @@ Options: all - all options, p - popular, t - trending, s - movers and shakers (s
 REFERENCES
 
 How to make a GET request by using Visual C#
-https:support.microsoft.com/en-us/kb/307023
+https://support.microsoft.com/en-us/kb/307023
 WebProxy.GetDefaultProxy Method ()
-https:msdn.microsoft.com/en-us/library/system.net.webproxy.getdefaultproxy(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/system.net.webproxy.getdefaultproxy(v=vs.110).aspx
 Tip: Replacement Methods for Obsolete WebProxy.GetDefaultProxy Method
-http:www.codeguru.com/csharp/csharp/cs_network/http/article.php/c16479/Tip-Replacement-Methods-for-Obsolete-WebProxyGetDefaultProxy-Method.htm
+http://www.codeguru.com/csharp/csharp/cs_network/http/article.php/c16479/Tip-Replacement-Methods-for-Obsolete-WebProxyGetDefaultProxy-Method.htm
 How to properly exit a C# application?
-http:stackoverflow.com/questions/12977924/how-to-properly-exit-a-c-sharp-application
+http://stackoverflow.com/questions/12977924/how-to-properly-exit-a-c-sharp-application
 String.Split Method (String[], StringSplitOptions)
-https:msdn.microsoft.com/en-us/library/tabh47cf(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/tabh47cf(v=vs.110).aspx
 Dictionary<TKey, TValue> Class
-https:msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx
 String.Join Method (String, String[])
-https:msdn.microsoft.com/en-us/library/57a79xd0(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/57a79xd0(v=vs.110).aspx
 Count Dictionary
-http:www.dotnetperls.com/count-dictionary
+http://www.dotnetperls.com/count-dictionary
 WebUtility Class
-https:msdn.microsoft.com/en-us/library/system.net.webutility(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/system.net.webutility(v=vs.110).aspx
 
 change log:
 2/7/16 - created and tested - tony rivas
-TBD - future work, replace checkpoint logic with RegEx
+TBD - future work, replace checkpoint logic with RegEx to reduce future maintenance
 */
 
 
@@ -57,11 +57,6 @@ namespace PopularTrendingAmazon
     {
         static void Main(string[] args)
         {
-            /*if (args.Length == 0)
-            {
-                Console.WriteLine("option(s) not recognized");
-                Console.WriteLine("all - all options, p - popular, t - trending, s - movers and shakers (sales), w - wished for, g - gifted");
-            }*/
             string options;
             Dictionary<string, string> sURL = new Dictionary<string, string>();
             if (args.Length > 0)
@@ -87,7 +82,7 @@ namespace PopularTrendingAmazon
                     Environment.Exit(1);
                 }
             }
-            //args.Length == 0
+            //args.Length == 0, popular and trending
             else
             {
                 sURL.Add("POPULAR AMAZON ITEMS", "http://www.amazon.com/Best-Sellers/zgbs/");
@@ -127,8 +122,6 @@ namespace PopularTrendingAmazon
                 string[] popularItem = new string[] {"generic item"};
                 string[] mfgName = new string[] {"generic mfg"};
                 string[] rating = new string[] {"generic rating"};
-                
-                //Regex regex = new Regex("</span><span>(.*?)</span>");
                 
                 //category name
                 Console.WriteLine("\n{0}", sURL_kvp.Key);
